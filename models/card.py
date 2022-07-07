@@ -6,11 +6,12 @@ card = Table(
     "card",
     Meta,
     Column("id", Integer, primary_key=True, autoincrement=True),
+    Column("id_tc", Integer, ForeignKey("tipeclass.id")),
+    Column("id_R", Integer,  ForeignKey("rareza.id")),
+    Column("id_TClass", Integer,  ForeignKey("tipecard.id")),
     Column("name",String(255)),
     Column("description",String(255)),
-    Column("Id-tc", Integer, ForeignKey("TipoClase.id")),
-    Column("Id-R", Integer,  ForeignKey("rareza.id")),
-    Column("Id-TClass", Integer,  ForeignKey("TipoCarta.id"))
+   
 )
 
 Meta.create_all(engine)
